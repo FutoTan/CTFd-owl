@@ -7,10 +7,11 @@ WORKDIR $WORKDIR
 RUN mkdir -p $WORKDIR /var/log/CTFd /var/uploads
 COPY . $WORKDIR
 
-RUN for d in CTFd/plugins/*; do \
-      if [ -f "$d/requirements.txt" ]; then \
-        pip install -r $d/requirements.txt --no-cache-dir; \
-      fi; \
+RUN pip install -i https://mirrors.cloud.tencent.com/pypi/simple/ --no-cache-dir -r requirements.txt \
+    && for d in CTFd/plugins/*; do \
+        if [ -f "$d/requirements.txt" ]; then \
+            pip install -i https://mirors.cloud.tencent.com/pypi/simple/ --no-cache-dir -r "$d/requirements.txt";\
+        fi; \
     done;
 
 RUN python -m ensurepip --upgrade
