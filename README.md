@@ -26,6 +26,17 @@ git clone https://github.com/FutoTan/CTFd-owl.git
 cp -rf CTFd-owl/* CTFd
 ```
 
+修改 frps 端口：
+
+`single-nginx.yml` 或 `single.yml`
+```yaml
+frps:
+...
+    ports:
+      - 20000-20099:20000-20099
+...
+```
+
 构建 CTFd 镜像：
 
 ```shell
