@@ -26,7 +26,7 @@ git clone https://github.com/FutoTan/CTFd-owl.git
 cp -rf CTFd-owl/* CTFd
 ```
 
-修改 frps 端口：
+修改 frps 端口（需要和下方 FRP Settings 中 FRP Direct Minimum Port 和 FRP Direct Maximum Port 保持一致）：
 
 `single-nginx.yml` 或 `single.yml`
 ```yaml
@@ -48,6 +48,8 @@ docker-compose -f CTFd/single.yml up -d
 ```
 
 ## Configuration
+
+进入管理面板
 
 ### Docker Settings
 
